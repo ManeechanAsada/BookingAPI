@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{661B575B-89AE-4B40-938D-EA5EFD19E63A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TikAeroWebAPI</RootNamespace>
+    <AssemblyName>TikAeroWebAPI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.5.0.1\lib\net35\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AgencyService.asmx" />
+    <Content Include="BookingService.asmx" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgencyService.asmx.cs">
+      <DependentUpon>AgencyService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BookingService.asmx.cs">
+      <DependentUpon>BookingService.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ActivityMessage\ActivityGetMessage.cs" />
+    <Compile Include="Classes\AgencyMessage\clsAgencyDetail.cs" />
+    <Compile Include="Classes\AgencyMessage\clsAgencyRegisterRequest.cs" />
+    <Compile Include="Classes\BaggageMessage\clsBaggageRequest.cs" />
+    <Compile Include="Classes\BookingMessage\BookingGetRequest.cs" />
+    <Compile Include="Classes\ClientPassengerMessage\clsAddPassengerProfileMessage.cs" />
+    <Compile Include="Classes\ClientPassengerMessage\clsAddPassengersProfileRequest.cs" />
+    <Compile Include="Classes\ClientPassengerMessage\clsClientMessage.cs" />
+    <Compile Include="Classes\ClientPassengerMessage\clsClientProfileReadRequest.cs" />
+    <Compile Include="Classes\ClientPassengerMessage\clsCreateClientProfileRequest.cs" />
+    <Compile Include="Classes\ClientPassengerMessage\clsEditClientProfileRequest.cs" />
+    <Compile Include="Classes\ClientPassengerMessage\clsEditPassengerProfileMessage.cs" />
+    <Compile Include="Classes\ClientPassengerMessage\clsEditPassengerProfileRequest.cs" />
+    <Compile Include="Classes\clsLogonResponse.cs" />
+    <Compile Include="Classes\clsUtils.cs" />
+    <Compile Include="Classes\clsWsRequest.cs" />
+    <Compile Include="Classes\clsWsResponse.cs" />
+    <Compile Include="Classes\GetQuoteSummaryMessage\clsFlightSegmentRequest.cs" />
+    <Compile Include="Classes\GetQuoteSummaryMessage\clsGetQuoteSummaryRequest.cs" />
+    <Compile Include="Classes\PassengerMessage\PassengersManifestRequest.cs" />
+    <Compile Include="Classes\PassengerMessage\PassengerManifestRequest.cs" />
+    <Compile Include="Classes\PaymentMessage\PaymentRequest.cs" />
+    <Compile Include="Classes\PaymentMessage\VoucherPaymentRequest.cs" />
+    <Compile Include="Classes\RemarkMessage\clsAddRemarkRequest.cs" />
+    <Compile Include="Classes\RemarkMessage\clsCompleteRemarkRequest.cs" />
+    <Compile Include="Classes\RemarkMessage\clsUpdateRemarkRequest.cs" />
+    <Compile Include="Classes\RemarkMessage\clsRemarkBase.cs" />
+    <Compile Include="Classes\RemarkMessage\clsRemoveRemarkRequest.cs" />
+    <Compile Include="Classes\SeatMessage\clsSeatRequest.cs" />
+    <Compile Include="Classes\FeeMessage\clsRemoveFeeRequest.cs" />
+    <Compile Include="Classes\FeeMessage\clsGetCustomFeeRequest.cs" />
+    <Compile Include="Classes\ServiceMessage\clsSpecialServiceRequest.cs" />
+    <Compile Include="Classes\VoucherMessage\SaveVoucherRequest.cs" />
+    <Compile Include="Classes\VoucherMessage\ValidateVoucherRequest.cs" />
+    <Compile Include="Classes\VoucherMessage\VoucherReadRequest.cs" />
+    <Compile Include="Classes\VoucherMessage\VoucherTemplateListRequest.cs" />
+    <Compile Include="Classes\VoucherMessage\VoucherTemplateRequest.cs" />
+    <Compile Include="Classes\VoucherMessage\VoucherVoidRequest.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EncryptKey\tikAeroService.kez" />
+    <None Include="EncryptKey\tikAeroService.pke" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\TikAeroWebAPI.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\tikAeroWebMain\tikSystem.Web.Library\lib.web.core.v1\tikSystem.Web.Library\tikSystem.Web.Library.csproj">
+      <Project>{98f488fe-1566-4873-a5f0-8d86ed927838}</Project>
+      <Name>tikSystem.Web.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\webmain\yo\lib.web.core.v1\tikSystem.Web.Library\tikSystem.Web.Library.csproj">
+      <Project>{98f488fe-1566-4873-a5f0-8d86ed927838}</Project>
+      <Name>tikSystem.Web.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39395</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/TikAeroWebAPI</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
